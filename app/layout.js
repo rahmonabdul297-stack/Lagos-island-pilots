@@ -16,7 +16,7 @@ const body = Instrument_Sans({
   display: "swap",
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lagosislandpilots.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
@@ -26,9 +26,14 @@ export const metadata = {
   },
   description:
     "Safe, reliable, and punctual daily student transportation connecting Lagos Island to Lagos Mainland (Yaba). An official subsidiary of FSTCY School Bus Shuttle Operators Association.",
-    icons: {
+  
+  // FIXED: Moved to root level & removed "google-site-verification=" prefix
+  verification: {
+    google: "q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo",
+  },
+
+  icons: {
     icon: "/images/logo.png",
-   
   },
   keywords: [
     "Lagos Island Pilots",
@@ -66,9 +71,6 @@ export const metadata = {
         alt: `${site.name} - Student Transportation Service`,
       },
     ],
-    verification: {
-    google: "google-site-verification=q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo",
-  },
   },
   twitter: {
     card: "summary_large_image",
@@ -104,7 +106,6 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
-  // Structured Data (JSON-LD) for Local Business & Transportation Service
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BusReservation",
