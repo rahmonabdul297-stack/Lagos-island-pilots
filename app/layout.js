@@ -26,6 +26,10 @@ export const metadata = {
   },
   description:
     "Safe, reliable, and punctual daily student transportation connecting Lagos Island to Lagos Mainland (Yaba). An official subsidiary of FSTCY School Bus Shuttle Operators Association.",
+    icons: {
+    icon: "/images/logo.png",
+   
+  },
   keywords: [
     "Lagos Island Pilots",
     "FSTCY School Bus Shuttle Operators Association",
@@ -62,6 +66,9 @@ export const metadata = {
         alt: `${site.name} - Student Transportation Service`,
       },
     ],
+    verification: {
+    google: "google-site-verification=q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo",
+  },
   },
   twitter: {
     card: "summary_large_image",
