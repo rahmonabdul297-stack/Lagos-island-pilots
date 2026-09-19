@@ -17,23 +17,25 @@ export default function InquiryForm({ defaultService }) {
       successMessage="Thanks. We have your booking inquiry and will confirm availability soon."
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        <SelectField
+        {/* <SelectField
           label="Service"
           name="service"
           required
           options={serviceTiers}
           defaultValue={preselected}
           className="sm:col-span-2"
-        />
+        /> */}
         <Field
           label="Parent or guardian name"
           name="name"
+          placeholder="Enter parent or guardian name"
           required
           autoComplete="name"
         />
         <Field
           label="Phone number"
           name="phone"
+           placeholder="Enter your phone number"
           type="tel"
           required
           autoComplete="tel"
@@ -41,6 +43,7 @@ export default function InquiryForm({ defaultService }) {
         <Field
           label="Email"
           name="email"
+           placeholder="Enter your email address"
           type="email"
           autoComplete="email"
           required={false}
@@ -52,9 +55,10 @@ export default function InquiryForm({ defaultService }) {
           required
           options={[...pickupPoints, "Somewhere else (tell us below)"]}
         />
-        <Field label="School in Yaba" name="destination" required />
+        <Field label="School (destination)" name="destination" required />
         <TextareaField
           label="Anything else we should know?"
+           placeholder="Write something..."
           name="message"
           rows={3}
           className="sm:col-span-2"

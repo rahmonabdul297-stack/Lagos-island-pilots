@@ -2,7 +2,7 @@ import { schedule } from "@/lib/site";
 
 function Table({ title, direction, rows }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-line bg-surface">
+    <div className="overflow-hidden w-full rounded-2xl border border-line bg-surface">
       <table className="w-full text-left">
         <caption className="border-b border-line px-5 py-4 text-left">
           <span className="block font-display text-lg font-semibold">{title}</span>
@@ -37,7 +37,7 @@ export default function ScheduleTable() {
   const { morning, afternoon } = schedule;
 
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="w-[90%] grid gap-6 md:grid-cols-2">
       <Table
         title={morning.title}
         direction={morning.direction}

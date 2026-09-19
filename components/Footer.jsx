@@ -112,18 +112,42 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Newsletter Subscription */}
+          {/* Legal & Compliance Section */}
           <div className="sm:col-span-1 lg:col-span-3">
             <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-soft-blue sm:text-base">
-              Schedule and route updates
+              Legal & Compliance
             </h2>
-            <p className="mt-2 text-xs text-ice-blue/80 sm:text-sm">
-              Leave your email and we will tell you when times or pickup points
-              change.
-            </p>
-            <div className="mt-4">
-              <NewsletterForm />
-            </div>
+            {/* <p className="mt-2 text-xs leading-relaxed text-ice-blue/80 sm:text-sm">
+              Official subsidiary operating under FSTCY safety guidelines and
+              Lagos State school shuttle transport regulations.
+            </p> */}
+
+            <ul className="mt-4 space-y-2 text-xs sm:text-sm">
+              <li>
+                <Link
+                  href="/terms"
+                  className="inline-block text-ice-blue/80 transition-all duration-200 hover:translate-x-1 hover:text-white hover:underline"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="inline-block text-ice-blue/80 transition-all duration-200 hover:translate-x-1 hover:text-white hover:underline"
+                >
+                  Parent Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/safety-policy"
+                  className="inline-block text-ice-blue/80 transition-all duration-200 hover:translate-x-1 hover:text-white hover:underline"
+                >
+                  Student Safety Code
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

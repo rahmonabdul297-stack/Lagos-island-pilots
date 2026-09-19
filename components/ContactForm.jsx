@@ -16,6 +16,7 @@ export default function ContactForm() {
         <Field
           label="Full name"
           name="name"
+          placeholder="Enter full name"
           required
           autoComplete="name"
           className="sm:col-span-2"
@@ -23,6 +24,7 @@ export default function ContactForm() {
         <Field
           label="Email"
           name="email"
+          placeholder="Enter your email address"
           type="email"
           required
           autoComplete="email"
@@ -30,10 +32,10 @@ export default function ContactForm() {
         <Field
           label="Phone number"
           name="phone"
+          placeholder="Enter your phone number"
           type="tel"
           required
           autoComplete="tel"
-          placeholder="e.g. 0801 234 5678"
         />
         <SelectField
           label="Pickup location (Lagos Island)"

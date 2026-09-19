@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaMapMarkerAlt, FaSchool, FaQuoteLeft } from "react-icons/fa";
-import RouteStrip from "@/components/RouteStrip";
+import {RouteStrip, Schools} from "@/components/RouteStrip";
 import RouteCard from "@/components/RouteCard";
 import Section, { SectionHeading } from "@/components/Section";
 import {
@@ -48,10 +48,11 @@ export default function HomePage() {
           </div>
 
           <RouteStrip />
+           <Schools />
         </div>
         <div className="danfo-stripe" aria-hidden />
       </section>
-
+       
       {/* Highlights */}
       <Section>
         <SectionHeading title="A commute parents can plan around">

@@ -14,6 +14,7 @@ export function Field({
   label,
   name,
   type = "text",
+  placeholder = "",
   required = false,
   className = "",
   ...rest
@@ -26,6 +27,7 @@ export function Field({
       <input
         id={name}
         name={name}
+        placeholder={placeholder}
         type={type}
         required={required}
         className={control}
@@ -76,6 +78,7 @@ export function SelectField({
 export function TextareaField({
   label,
   name,
+  placeholder,
   required = false,
   rows = 5,
   className = "",
@@ -89,6 +92,7 @@ export function TextareaField({
       <textarea
         id={name}
         name={name}
+        placeholder={placeholder}
         rows={rows}
         required={required}
         className={control}

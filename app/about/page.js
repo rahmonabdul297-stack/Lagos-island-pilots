@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaUserShield, FaIdCard, FaBus } from "react-icons/fa";
 import Section, { PageHeader, SectionHeading } from "@/components/Section";
 import { site, standards } from "@/lib/site";
+import PilotsSlider from "@/components/pilots";
 
 export const metadata = {
   title: "About Us",
@@ -23,7 +24,7 @@ const pilots = [
   {
     id: "PILOT-02",
     name: "MR. SHITTU ADEBAYO",
-    role: "THE CHAIRMAN AND PIONEER MEMBER OF FSTCY TERMINAL IN UPPER CAMPUS AND TOWRY TERMINAL  (UP TO DATE).",
+    role: "The Chairman and Pioneer Member of FSTCY Terminal in Upper Campus and Towry Terminal (Up to Date).",
     experience: "",
     route: "",
     image: "/images/D2.jpeg",
@@ -31,7 +32,7 @@ const pilots = [
   {
     id: "PILOT-03",
     name: " MR. NOFIU IBRAHIM IDOWU ",
-    role: "THE ORIGINATOR AND FOUNDER OF YABATECH, FCE AND OTHER SCHOOLS TERMINAL IN A.P FILLING STATION UPPER CAMPUS AND NOW VICE CHAIRMAN IN TOWRY TERMINAL, (UP TO DATE).",
+    role: "The Originator and Founder of Yabatech, FCE and Other Schools Terminal in A.P Filling Station Upper Campus and Now Vice Chairman in Towry Terminal, (Up to Date).",
     experience: "",
     route: "",
     image: "/images/D3.jpeg",
@@ -39,7 +40,7 @@ const pilots = [
   {
     id: "PILOT-04",
     name: "MR YEKINI WASIU KOLAWOLE  (KK)",
-    role: "BUS COORDINATOR 1 / SECRETARY ",
+    role: "Bus Coordinator 1 / Secretary ",
     experience: "",
     route: "",
     image: "/images/D4.jpeg",
@@ -47,7 +48,7 @@ const pilots = [
   {
     id: "PILOT-05",
     name: "MR. THOMPSON ADEWALE. O",
-    role: "FINANCIAL SECRETARY",
+    role: "Financial Secretary",
     experience: "",
     route: "",
     image: "/images/D5.jpeg",
@@ -55,7 +56,7 @@ const pilots = [
   {
     id: "PILOT-06",
     name: " MR. ISSA MUIZ. O",
-    role: "BUS COORDINATOR 2 / P. R. O",
+    role: "Bus Coordinator 2 / P.R.O.",
     experience: "",
     route: "",
     image: "/images/D6.jpeg",
@@ -63,7 +64,7 @@ const pilots = [
   {
     id: "PILOT-07",
     name: "MR  KAFOO FARUQ",
-    role: "PILOT MEMBER",
+    role: "Pilot Member",
     experience: "",
     route: "",
     image: "/images/D7.jpeg",
@@ -130,57 +131,7 @@ export default function AboutPage() {
           your children's daily safety.
         </SectionHeading>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {pilots.map((pilot) => (
-            <article
-              key={pilot.id}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-brand/40"
-            >
-              {/* Pilot Image Container */}
-              <div className="relative w-full overflow-hidden bg-brand/5">
-                <img
-                  src={pilot.image}
-                  alt={pilot.name}
-                  className="transition-transform duration-500 group-hover:scale-105"
-                 
-                />
-                
-                {/* Fallback avatar icon container */}
-                <div className="absolute inset-0 -z-10 grid place-items-center bg-brand/10 text-brand/40">
-                  <FaUserShield className="text-6xl" />
-                </div>
-
-                {/* Driver ID Tag */}
-                {/* <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-hero/80 backdrop-blur px-3 py-1 text-[11px] font-semibold text-white">
-                  <FaIdCard className="text-soft-blue" />
-                  {pilot.id}
-                </span> */}
-              </div>
-
-              {/* Pilot Information */}
-              <div className="flex flex-1 flex-col justify-between p-5">
-                <div>
-                  <h3 className="font-display capitalize text-lg font-bold tracking-tight text-ink group-hover:text-brand transition-colors">
-                    {pilot.name}
-                  </h3>
-                  <p className="mt-1 text-xs font-semibold text-brand lowercase">
-                    {pilot.role}
-                  </p>
-                </div>
-
-                <div className="mt-4 pt-3 border-t border-line/60 space-y-1.5 text-xs text-muted">
-                  <p className="flex items-center gap-1.5">
-                    <FaBus className="text-brand shrink-0" />
-                    <span>{pilot.route}</span>
-                  </p>
-                  <p className="font-medium text-ink/80">
-                    {pilot.experience}
-                  </p>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+       <PilotsSlider pilots={pilots}/>
       </Section>
 
       {/* Standards */}

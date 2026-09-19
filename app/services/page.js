@@ -3,6 +3,7 @@ import ServiceCard from "@/components/ServiceCard";
 import ScheduleTable from "@/components/ScheduleTable";
 import InquiryForm from "@/components/InquiryForm";
 import { services } from "@/lib/site";
+import { Schools } from "@/components/RouteStrip";
 
 export const metadata = {
   title: "Services",
@@ -35,12 +36,13 @@ export default async function ServicesPage({ searchParams }) {
           Morning departures from the Island and afternoon returns from Yaba.
           Exact pickup times are confirmed with you when you book.
         </SectionHeading>
-        <div className="mt-10">
+        <div className="m-10">
           <ScheduleTable />
         </div>
+        <Schools />
       </Section>
 
-      <Section id="inquiry">
+      {/* <Section id="inquiry">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.5fr]">
           <SectionHeading title="Ask about a service">
             Pick the service you want and tell us where your child boards and
@@ -51,7 +53,7 @@ export default async function ServicesPage({ searchParams }) {
             <InquiryForm key={selected ?? "none"} defaultService={selected} />
           </div>
         </div>
-      </Section>
+      </Section> */}
     </>
   );
 }

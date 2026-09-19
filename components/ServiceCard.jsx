@@ -9,7 +9,7 @@ export default function ServiceCard({ icon: Icon, title, text, value }) {
       <h3 className="mt-5 font-display text-xl font-semibold">{title}</h3>
       <p className="mt-2 flex-1 leading-relaxed text-muted">{text}</p>
       <Link
-        href={`/services?service=${value}#inquiry`}
+        href={`/contact`}
         className="mt-5 inline-block font-semibold text-brand underline-offset-4 hover:underline"
       >
         Ask about this service
