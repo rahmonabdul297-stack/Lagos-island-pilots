@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+/*
+  Palette Tokens:
+  - #091540: Deep Navy / Main Dark Surface / High Contrast Text
+  - #1B2CC1: Royal Blue / Primary Brand Accent & Action Buttons
+  - #7692FF: Soft Blue / Secondary Highlights & Active Indicators
+  - #ABD2FA: Ice Blue / Subtle Lines, Borders & Card Backgrounds
+  - #FFFFFF: Pure White / Crisp Light Surfaces & Contrast Text
+*/
+
+/* -------------------------------------------------------------------------- */
+/* LIGHT MODE (Default)                                                       */
+/* -------------------------------------------------------------------------- */
+:root,
+.light {
+  --bg: #f4f7fc;                  /* Light background */
+  --surface: #ffffff;             /* Card and component backgrounds */
+  --ink: #091540;                 /* Dark navy text for high readability */
+  --muted: #3b4d80;               /* Muted text for secondary information */
+  --line: #abd2fa;                /* Subtle ice-blue borders */
+  --brand: #1b2cc1;               /* Royal blue primary brand color */
+  --signal: #7692ff;              /* Soft blue accent */
+  --signal-ink: #ffffff;          /* White text on accent elements */
+  --focus: #1b2cc1;               /* Focus ring color */
+
+  /* Dedicated dark sections (e.g., hero banner, footer) in light mode */
+  --hero-bg: #091540;
+  --ok-solid: #1b2cc1;
+  --err-solid: #a61e16;
+}
+
+/* -------------------------------------------------------------------------- */
+/* DARK MODE                                                                  */
+/* -------------------------------------------------------------------------- */
+.dark,
+:root:has(.dark) {
+  --bg: #050b21;                  /* Deep dark background */
+  --surface: #091540;             /* Navy surface for cards and navbar */
+  --ink: #ffffff;                 /* Pure white crisp text */
+  --muted: #abd2fa;               /* Ice blue for muted text */
+  --line: #1b2cc1;                /* Royal blue borders */
+  --brand: #7692ff;               /* Soft blue primary brand color in dark */
+  --signal: #1b2cc1;              /* Royal blue accent */
+  --signal-ink: #ffffff;          /* White text on accent elements */
+  --focus: #7692ff;               /* Bright focus ring */
+  --hero-bg: #030714;
+}
+
+/* Automatic Fallback to OS System Preference if no explicit class is set */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --bg: #050b21;
+    --surface: #091540;
+    --ink: #ffffff;
+    --muted: #abd2fa;
+    --line: #1b2cc1;
+    --brand: #7692ff;
+    --signal: #1b2cc1;
+    --signal-ink: #ffffff;
+    --focus: #7692ff;
+    --hero-bg: #030714;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* TAILWIND THEME UTILITIES                                                  */
+/* -------------------------------------------------------------------------- */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-signal: var(--signal);
+  --color-signal-ink: var(--signal-ink);
+  --color-hero: var(--hero-bg);
+  --color-ok: var(--ok-solid);
+  --color-err: var(--err-solid);
+
+  /* Direct palette class aliases for Tailwind */
+  --color-navy: #091540;
+  --color-royal: #1b2cc1;
+  --color-soft-blue: #7692ff;
+  --color-ice-blue: #abd2fa;
+  --color-white: #ffffff;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/* GLOBAL TRANSITIONS & ANIMATIONS                                           */
+/* -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--ink);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Focus ring accessibility */
+.on-dark {
+  --focus: #7692ff;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(118, 146, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(27, 44, 193, 0.6);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@layer components {
+  /* Animation Utility Classes */
+  .animate-fade-in {
+    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 3s infinite ease-in-out;
+  }
+
+  .animate-float {
+    animation: floatSlow 4s ease-in-out infinite;
+  }
+
+  /* Buttons with Light & Dark support */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(9, 21, 64, 0.2);
+  }
+
+  .btn:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  .btn-primary {
+    background: var(--brand);
+    color: #ffffff;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--brand) 85%, black);
+  }
+
+  .btn-accent {
+    background: var(--signal);
+    color: var(--signal-ink);
+  }
+
+  .btn-accent:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--signal) 85%, black);
+  }
+
+  .btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+  }
+
+  .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+  }
+
+  /* Decorative Brand Stripe */
+  .danfo-stripe {
+    height: 10px;
+    background: linear-gradient(
+      to right,
+      #abd2fa 0% 25%,
+      #7692ff 25% 50%,
+      #1b2cc1 50% 75%,
+      #091540 75% 100%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
