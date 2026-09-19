@@ -26,7 +26,7 @@ export const metadata = {
   },
   description:
     "Safe, reliable, and punctual daily student transportation connecting Lagos Island to Lagos Mainland (Yaba). An official subsidiary of FSTCY School Bus Shuttle Operators Association.",
-  
+
   // FIXED: Moved to root level & removed "google-site-verification=" prefix
   verification: {
     google: "q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo",
@@ -109,33 +109,33 @@ export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BusReservation",
-    "name": site.fullName || site.name,
-    "description":
+    name: site.fullName || site.name,
+    description:
       "Safe, reliable and punctual student transport from Lagos Island to Lagos Mainland (Yaba).",
-    "url": baseUrl,
-    "logo": `${baseUrl}/images/logo.png`,
-    "telephone": Array.isArray(site.phone) ? site.phone[0] : site.phone,
-    "email": site.email,
-    "address": {
+    url: baseUrl,
+    logo: `${baseUrl}/images/logo.png`,
+    telephone: Array.isArray(site.phone) ? site.phone[0] : site.phone,
+    email: site.email,
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": site.address || "Lagos Island",
-      "addressLocality": "Lagos Island",
-      "addressRegion": "Lagos State",
-      "addressCountry": "NG",
+      streetAddress: site.address || "Lagos Island",
+      addressLocality: "Lagos Island",
+      addressRegion: "Lagos State",
+      addressCountry: "NG",
     },
-    "areaServed": [
+    areaServed: [
       {
         "@type": "AdministrativeArea",
-        "name": "Lagos Island",
+        name: "Lagos Island",
       },
       {
         "@type": "AdministrativeArea",
-        "name": "Yaba",
+        name: "Yaba",
       },
     ],
-    "parentOrganization": {
+    parentOrganization: {
       "@type": "Organization",
-      "name": "FSTCY School Bus Shuttle Operators Association",
+      name: "FSTCY School Bus Shuttle Operators Association",
     },
   };
 
@@ -146,8 +146,11 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <meta name="google-site-verification" content="q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo" />
-        <link rel="icon" href="/images/logo.png"/>
+        <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
+        <meta
+          name="google-site-verification"
+          content="q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo"
+        />
       </head>
       <body className="flex min-h-screen flex-col bg-bg font-sans text-ink antialiased">
         <a
