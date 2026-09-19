@@ -27,7 +27,6 @@ export const metadata = {
   description:
     "Safe, reliable, and punctual daily student transportation connecting Lagos Island to Lagos Mainland (Yaba). An official subsidiary of FSTCY School Bus Shuttle Operators Association.",
 
-  // FIXED: Moved to root level & removed "google-site-verification=" prefix
   verification: {
     google: "q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo",
   },
@@ -146,7 +145,8 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="icon" type="image/svg+xml" href="/images/logo.png" />
+        {/* Fixed PNG icon mimetype */}
+       <link rel="icon" type="image/png" href="/images/logo.png" />
         <meta
           name="google-site-verification"
           content="q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo"
