@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
+import AppWrapper from "@/components/AppWrapper";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -146,8 +147,11 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {/* Fixed PNG icon mimetype */}
-       <link rel="icon" type="image/png" href="/images/logo.png" />
-       <meta name="google-site-verification" content="XihMyKmfq8q0W_FY83QaxO-9JJZCGVUadwj4Ph3awoI" />
+        <link rel="icon" type="image/png" href="/images/logo.png" />
+        <meta
+          name="google-site-verification"
+          content="XihMyKmfq8q0W_FY83QaxO-9JJZCGVUadwj4Ph3awoI"
+        />
       </head>
       <body className="flex min-h-screen flex-col bg-bg font-sans text-ink antialiased">
         <a
@@ -156,11 +160,13 @@ export default function RootLayout({ children }) {
         >
           Skip to main content
         </a>
-        <Navbar />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <AppWrapper>
+          <Navbar />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </AppWrapper>
       </body>
     </html>
   );
