@@ -146,6 +146,8 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <meta name="google-site-verification" content="q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo" />
+        <link rel="icon" href="/images/logo.png"/>
       </head>
       <body className="flex min-h-screen flex-col bg-bg font-sans text-ink antialiased">
         <a
