@@ -147,10 +147,7 @@ export default function RootLayout({ children }) {
         />
         {/* Fixed PNG icon mimetype */}
        <link rel="icon" type="image/png" href="/images/logo.png" />
-        <meta
-          name="google-site-verification"
-          content="q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo"
-        />
+       <meta name="google-site-verification" content="XihMyKmfq8q0W_FY83QaxO-9JJZCGVUadwj4Ph3awoI" />
       </head>
       <body className="flex min-h-screen flex-col bg-bg font-sans text-ink antialiased">
         <a
