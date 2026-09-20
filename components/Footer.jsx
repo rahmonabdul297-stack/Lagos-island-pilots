@@ -128,7 +128,7 @@ export default function Footer() {
                   href="/terms"
                   className="inline-block text-ice-blue/80 transition-all duration-200 hover:translate-x-1 hover:text-white hover:underline"
                 >
-                  Terms of Service
+                 Our Policy
                 </Link>
               </li>
               <li>
@@ -136,15 +136,7 @@ export default function Footer() {
                   href="/terms"
                   className="inline-block text-ice-blue/80 transition-all duration-200 hover:translate-x-1 hover:text-white hover:underline"
                 >
-                  Parent Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="inline-block text-ice-blue/80 transition-all duration-200 hover:translate-x-1 hover:text-white hover:underline"
-                >
-                  Student Safety Code
+                 Drivers rules
                 </Link>
               </li>
             </ul>
