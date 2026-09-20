@@ -133,7 +133,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/privacy"
+                  href="/terms"
                   className="inline-block text-ice-blue/80 transition-all duration-200 hover:translate-x-1 hover:text-white hover:underline"
                 >
                   Parent Privacy Policy
@@ -141,7 +141,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/safety-policy"
+                  href="/terms"
                   className="inline-block text-ice-blue/80 transition-all duration-200 hover:translate-x-1 hover:text-white hover:underline"
                 >
                   Student Safety Code
