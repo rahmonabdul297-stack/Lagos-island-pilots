@@ -21,9 +21,10 @@ export default function ContactPage() {
 
   // Fallback payment values if site.payment is not configured in site.js
   const bankDetails = site.payment || {
-    bankName: "First Bank of Nigeria",
-    accountName: "FSTCY Lagos Island Pilots",
-    accountNumber: "0123456789",
+    bankName: "ACCESS BANK",
+    accountName: "YEKINI WASIU KOLAWOLE",
+    accountNumber: "1403646981",
+    amount: 2000.0,
   };
 
   return (
@@ -35,7 +36,6 @@ export default function ContactPage() {
       <Section className="px-4 sm:px-6 lg:px-8">
         {/* Responsive Grid Layout */}
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
-          
           {/* Direct Reach Out Container */}
           <aside className="self-start rounded-3xl bg-hero p-6 text-white on-dark sm:p-8 lg:p-9 transition-colors duration-300">
             <h2 className="font-display text-xl font-bold tracking-tight sm:text-2xl">
@@ -54,7 +54,10 @@ export default function ContactPage() {
                     {isPhoneArray ? (
                       <div className="space-y-1.5 text-sm sm:text-base flex flex-wrap">
                         {site.phone.map((phoneNum) => {
-                          const sanitizedPhone = phoneNum.replace(/[^0-9+]/g, "");
+                          const sanitizedPhone = phoneNum.replace(
+                            /[^0-9+]/g,
+                            "",
+                          );
                           return (
                             <div key={phoneNum} className="w-[50%] flex">
                               <a
@@ -69,7 +72,10 @@ export default function ContactPage() {
                       </div>
                     ) : (
                       <a
-                        href={site.phoneHref || `tel:${site.phone.replace(/[^0-9+]/g, "")}`}
+                        href={
+                          site.phoneHref ||
+                          `tel:${site.phone.replace(/[^0-9+]/g, "")}`
+                        }
                         className="inline-block break-all text-sm sm:text-base transition-colors hover:text-signal hover:underline"
                       >
                         {site.phone}
@@ -103,7 +109,9 @@ export default function ContactPage() {
                   <FaMapMarkerAlt aria-hidden />
                 </span>
                 <div className="min-w-0 flex-1">
-                  <dt className="text-xs text-white/65 sm:text-sm">Head office / station</dt>
+                  <dt className="text-xs text-white/65 sm:text-sm">
+                    Head office / station
+                  </dt>
                   <dd className="mt-1 text-sm font-medium leading-snug sm:text-base">
                     {site.address}
                   </dd>
@@ -116,7 +124,9 @@ export default function ContactPage() {
                   <FaClock aria-hidden />
                 </span>
                 <div className="min-w-0 flex-1">
-                  <dt className="text-xs text-white/65 sm:text-sm">Office hours</dt>
+                  <dt className="text-xs text-white/65 sm:text-sm">
+                    Office hours
+                  </dt>
                   <dd className="mt-1 text-sm font-medium sm:text-base">
                     {site.officeHours}
                   </dd>
@@ -132,7 +142,7 @@ export default function ContactPage() {
                     <FaCreditCard aria-hidden className="text-xs" />
                   </span>
                   <h3 className="font-display text-sm font-semibold tracking-wide text-white sm:text-base">
-                    Official Bank & Payment Details
+                    Official Bank & Payment Details For Application Form
                   </h3>
                 </div>
 
@@ -156,9 +166,17 @@ export default function ContactPage() {
                       {bankDetails.accountNumber}
                     </dd>
                   </div>
+
+                  <div className="flex justify-between pt-0.5">
+                    <dt className="text-white/65">Amount:</dt>
+                    <dd className="font-mono text-sm font-bold tracking-wider text-signal sm:text-base">
+                      {bankDetails.amount}
+                    </dd>
+                  </div>
                 </dl>
-                <p className="mt-3 text-[11px] leading-tight text-white/60">
-                  * Use student name or registration code as transaction reference.
+                <p className="mt-3 text-[15px] leading-tight text-white/70">
+                 {` Send your receipt to our whatsApp number.\n Note: Use student
+                  name transaction remark.`}
                 </p>
               </div>
             </div>
@@ -187,7 +205,6 @@ export default function ContactPage() {
             </p>
             <ContactForm />
           </div>
-
         </div>
       </Section>
     </>
