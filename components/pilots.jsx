@@ -1,7 +1,13 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { FaBus, FaChevronLeft, FaChevronRight, FaUserShield } from "react-icons/fa";
+import {
+  FaBus,
+  FaChevronLeft,
+  FaChevronRight,
+  FaPhone,
+  FaUserShield,
+} from "react-icons/fa";
 
 export default function PilotsSlider({ pilots = [] }) {
   const sliderRef = useRef(null);
@@ -34,7 +40,9 @@ export default function PilotsSlider({ pilots = [] }) {
       <div className="mb-4 flex items-center justify-between">
         {/* Slide Counter Indicator */}
         <p className="text-xs font-semibold text-muted">
-          Showing <span className="text-brand font-bold">{activeIndex + 1}</span> of {pilots.length} Pilots
+          Showing{" "}
+          <span className="text-brand font-bold">{activeIndex + 1}</span> of{" "}
+          {pilots.length} Pilots
         </p>
 
         {/* Prev / Next Arrow Buttons */}
@@ -50,7 +58,9 @@ export default function PilotsSlider({ pilots = [] }) {
           </button>
           <button
             type="button"
-            onClick={() => scrollToSlide(Math.min(pilots.length - 1, activeIndex + 1))}
+            onClick={() =>
+              scrollToSlide(Math.min(pilots.length - 1, activeIndex + 1))
+            }
             disabled={activeIndex === pilots.length - 1}
             className="grid size-10 place-items-center rounded-full border border-line bg-surface text-ink shadow-xs transition-all duration-200 hover:border-brand hover:text-brand disabled:cursor-not-allowed disabled:opacity-40"
             aria-label="Next Pilot"
@@ -102,12 +112,10 @@ export default function PilotsSlider({ pilots = [] }) {
 
               <div className="mt-4 space-y-1.5 border-t border-line/60 pt-3 text-xs text-muted">
                 <p className="flex items-center gap-1.5">
-                  <FaBus className="shrink-0 text-brand" />
-                  <span>{pilot.route}</span>
+                  <FaPhone className="shrink-0 text-brand" />
+                  <a href={`tel:${pilot.phone} `} className="hover:underline">{pilot.phone}</a>
                 </p>
-                <p className="font-medium text-ink/80">
-                  {pilot.experience}
-                </p>
+                <p className="font-medium text-ink/80">{pilot.experience}</p>
               </div>
             </div>
           </article>
@@ -122,7 +130,9 @@ export default function PilotsSlider({ pilots = [] }) {
             type="button"
             onClick={() => scrollToSlide(idx)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              activeIndex === idx ? "w-6 bg-brand" : "w-2 bg-line hover:bg-brand/50"
+              activeIndex === idx
+                ? "w-6 bg-brand"
+                : "w-2 bg-line hover:bg-brand/50"
             }`}
             aria-label={`Go to pilot ${idx + 1}`}
           />

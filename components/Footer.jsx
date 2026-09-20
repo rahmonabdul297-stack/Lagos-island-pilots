@@ -125,10 +125,10 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-xs sm:text-sm">
               <li>
                 <Link
-                  href="/terms"
+                  href="/policy"
                   className="inline-block text-ice-blue/80 transition-all duration-200 hover:translate-x-1 hover:text-white hover:underline"
                 >
-                 Our Policy
+                 Parent & Student rules 
                 </Link>
               </li>
               <li>

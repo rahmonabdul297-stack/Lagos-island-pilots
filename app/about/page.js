@@ -19,6 +19,7 @@ const pilots = [
     role: "The originator, Pioneer And Founder of FSTCY Terminal in Upper Campus",
     experience: "",
     route: "",
+    phone: " 08166525256",
     image: "/images/D1.jpeg",
   },
   {
@@ -27,6 +28,7 @@ const pilots = [
     role: "The Chairman and Pioneer Member of FSTCY Terminal in Upper Campus and Towry Terminal (Up to Date).",
     experience: "",
     route: "",
+    phone: " 07013320511 ",
     image: "/images/D2.jpeg",
   },
   {
@@ -35,6 +37,7 @@ const pilots = [
     role: "The Originator and Founder of Yabatech, FCE and Other Schools Terminal in A.P Filling Station Upper Campus and Now Vice Chairman in Towry Terminal, (Up to Date).",
     experience: "",
     route: "",
+    phone: " 08175794440",
     image: "/images/D3.jpeg",
   },
   {
@@ -43,6 +46,7 @@ const pilots = [
     role: "Bus Coordinator 1 / Secretary ",
     experience: "",
     route: "",
+    phone: "09092794351",
     image: "/images/D4.jpeg",
   },
   {
@@ -51,6 +55,7 @@ const pilots = [
     role: "Financial Secretary",
     experience: "",
     route: "",
+    phone: "08055262505",
     image: "/images/D5.jpeg",
   },
   {
@@ -59,6 +64,7 @@ const pilots = [
     role: "Bus Coordinator 2 / P.R.O.",
     experience: "",
     route: "",
+    phone: "08082153216 ",
     image: "/images/D6.jpeg",
   },
   {
@@ -67,6 +73,7 @@ const pilots = [
     role: "Pilot Member",
     experience: "",
     route: "",
+    phone: "08035118180",
     image: "/images/D7.jpeg",
   },
 ];
@@ -131,7 +138,7 @@ export default function AboutPage() {
           your children's daily safety.
         </SectionHeading>
 
-       <PilotsSlider pilots={pilots}/>
+        <PilotsSlider pilots={pilots} />
       </Section>
 
       {/* Standards */}
@@ -151,7 +158,9 @@ export default function AboutPage() {
                 </span>
                 <h3 className="font-display text-xl font-semibold">{title}</h3>
               </div>
-              <p className="max-w-2xl text-lg leading-relaxed text-muted">{text}</p>
+              <p className="max-w-2xl text-lg leading-relaxed text-muted">
+                {text}
+              </p>
             </li>
           ))}
         </ul>
