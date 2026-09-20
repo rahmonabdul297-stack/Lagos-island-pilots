@@ -2,6 +2,7 @@ import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { site } from "@/lib/site";
 import AppWrapper from "@/components/AppWrapper";
 
@@ -29,7 +30,7 @@ export const metadata = {
     "Safe, reliable, and punctual daily student transportation connecting Lagos Island to Lagos Mainland (Yaba). An official subsidiary of FSTCY School Bus Shuttle Operators Association.",
 
   verification: {
-    google: "q9wFkqWYPnxee4mgBMDVqUHCKwlG8qK-0IYfwzsQsTo",
+    google: "XihMyKmfq8q0W_FY83QaxO-9JJZCGVUadwj4Ph3awoI",
   },
 
   icons: {
@@ -146,7 +147,6 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Fixed PNG icon mimetype */}
         <link rel="icon" type="image/png" href="/images/logo.png" />
         <meta
           name="google-site-verification"
@@ -166,6 +166,7 @@ export default function RootLayout({ children }) {
             {children}
           </main>
           <Footer />
+          <WhatsAppButton />
         </AppWrapper>
       </body>
     </html>

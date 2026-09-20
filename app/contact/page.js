@@ -1,4 +1,11 @@
-import { FaClock, FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
+import {
+  FaClock,
+  FaCreditCard,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaUniversity,
+} from "react-icons/fa";
 import Section, { PageHeader } from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
 import { pickupPoints, site } from "@/lib/site";
@@ -12,6 +19,13 @@ export const metadata = {
 export default function ContactPage() {
   const isPhoneArray = Array.isArray(site.phone);
 
+  // Fallback payment values if site.payment is not configured in site.js
+  const bankDetails = site.payment || {
+    bankName: "First Bank of Nigeria",
+    accountName: "FSTCY Lagos Island Pilots",
+    accountNumber: "0123456789",
+  };
+
   return (
     <>
       <PageHeader title="Contact & inquiry">
@@ -19,7 +33,7 @@ export default function ContactPage() {
       </PageHeader>
 
       <Section className="px-4 sm:px-6 lg:px-8">
-        {/* Responsive Grid Layout: Stacks vertically on mobile, splits 2-column on desktop */}
+        {/* Responsive Grid Layout */}
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
           
           {/* Direct Reach Out Container */}
@@ -29,7 +43,7 @@ export default function ContactPage() {
             </h2>
 
             <dl className="mt-6 space-y-6">
-              {/* Phone Contacts (Handles Array & Single String) */}
+              {/* Phone Contacts */}
               <div className="flex gap-3.5 sm:gap-4">
                 <span className="grid size-10 shrink-0 place-items-center rounded-full bg-signal text-signal-ink">
                   <FaPhone aria-hidden />
@@ -45,7 +59,7 @@ export default function ContactPage() {
                             <div key={phoneNum} className="w-[50%] flex">
                               <a
                                 href={`tel:${sanitizedPhone}`}
-                                className=" transition-colors hover:text-signal hover:underline flex"
+                                className="transition-colors hover:text-signal hover:underline flex"
                               >
                                 {phoneNum}
                               </a>
@@ -110,8 +124,47 @@ export default function ContactPage() {
               </div>
             </dl>
 
-            {/* Route Coverage Subsection */}
+            {/* Official Payment & Bank Details Card */}
             <div className="mt-8 border-t border-white/20 pt-6">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 backdrop-blur-sm">
+                <div className="flex items-center gap-2.5">
+                  <span className="grid size-7 shrink-0 place-items-center rounded-lg bg-signal/20 text-signal">
+                    <FaCreditCard aria-hidden className="text-xs" />
+                  </span>
+                  <h3 className="font-display text-sm font-semibold tracking-wide text-white sm:text-base">
+                    Official Bank & Payment Details
+                  </h3>
+                </div>
+
+                <dl className="mt-4 space-y-2.5 text-xs sm:text-sm">
+                  <div className="flex justify-between border-b border-white/10 pb-2">
+                    <dt className="text-white/65">Bank Name:</dt>
+                    <dd className="font-medium text-white flex items-center gap-1.5">
+                      <FaUniversity className="text-signal text-xs" />
+                      {bankDetails.bankName}
+                    </dd>
+                  </div>
+                  <div className="flex justify-between border-b border-white/10 pb-2">
+                    <dt className="text-white/65">Account Name:</dt>
+                    <dd className="font-medium text-white text-right">
+                      {bankDetails.accountName}
+                    </dd>
+                  </div>
+                  <div className="flex justify-between pt-0.5">
+                    <dt className="text-white/65">Account Number:</dt>
+                    <dd className="font-mono text-sm font-bold tracking-wider text-signal sm:text-base">
+                      {bankDetails.accountNumber}
+                    </dd>
+                  </div>
+                </dl>
+                <p className="mt-3 text-[11px] leading-tight text-white/60">
+                  * Use student name or registration code as transaction reference.
+                </p>
+              </div>
+            </div>
+
+            {/* Route Coverage Subsection */}
+            <div className="mt-6 border-t border-white/20 pt-6">
               <h3 className="font-display text-base font-semibold sm:text-lg">
                 Route coverage
               </h3>
