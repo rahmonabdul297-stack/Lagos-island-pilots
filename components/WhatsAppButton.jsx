@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 
 export default function WhatsAppButton() {
   // Get phone number from site config (or fallback if empty)
-  const rawPhone = Array.isArray(site?.phone) ? site.phone[0] : site?.phone || "";
+  const rawPhone = Array.isArray(site?.phone) ? site.phone[2] : site?.phone || "";
   
   // Format phone number to international standard (remove leading 0 and non-digits)
   let cleanPhone = rawPhone.replace(/[^0-9]/g, "");
