@@ -59,7 +59,7 @@ export const metadata = {
   openGraph: {
     title: `${site.name} | Student Transport Lagos Island to Yaba`,
     description:
-      "Safe, reliable, and punctual student transport connecting Lagos Island to Yaba (Mainland). Subsidiary of FSTCY.",
+      "Safe, reliable, and punctual student transport connecting Lagos Island to Yaba (Mainland). Subsidiary of FSTCY School Bus Shuttle Operators Association.",
     url: baseUrl,
     siteName: site.name,
     locale: "en_NG",
@@ -77,7 +77,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `${site.name} | School Shuttle Lagos Island to Yaba`,
     description:
-      "Punctual student shuttle service between Lagos Island and Yaba. Official subsidiary of FSTCY.",
+      "Punctual student shuttle service between Lagos Island and Yaba. Official Subsidiary of FSTCY School Bus Shuttle Operators Association.",
     images: ["/images/og-image.jpg"],
   },
   robots: {

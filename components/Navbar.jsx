@@ -126,7 +126,7 @@ export default function Navbar() {
           >
             {mounted ? (
               theme === "dark" ? (
-                <FaSun className="text-amber-400 text-sm sm:text-base" />
+                <FaSun className="text-white text-sm sm:text-base" />
               ) : (
                 <FaMoon className="text-brand text-sm sm:text-base" />
               )
